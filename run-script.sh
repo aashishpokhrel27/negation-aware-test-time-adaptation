@@ -1,4 +1,4 @@
-python src.main_TTA.py \
+python src/main_TTA.py \
     --name NEAT_clip_coco \
     --model ViT-B-32 \
     --pretrained openai \

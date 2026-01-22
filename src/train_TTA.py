@@ -4,7 +4,7 @@ import torch
 import torch.nn.functional as F
 from tqdm import tqdm
 import torch.nn as nn
-from ddp import *
+# from ddp import *
 import torch.distributed as dist
 import torch.distributions as dists
 

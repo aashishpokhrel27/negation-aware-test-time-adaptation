@@ -29,7 +29,7 @@ from src.utils.data import get_data
 from src.utils.distributed import is_master, init_distributed_device
 from src.utils.logger import setup_logging
 
-from params import parse_args
+from src.params import parse_args
 from train_TTA import train_one_epoch
 
 

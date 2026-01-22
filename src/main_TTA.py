@@ -37,7 +37,7 @@ from src.evaluation.utils import evaluate, evaluate_video
 from src.data import create_dataset, create_sampler, create_loader
 
 import torch.multiprocessing
-import tta_utils
+import src.tta_utils
 
 torch.multiprocessing.set_sharing_strategy('file_descriptor')
 

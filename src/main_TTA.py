@@ -30,11 +30,11 @@ from src.utils.distributed import is_master, init_distributed_device
 from src.utils.logger import setup_logging
 
 from src.params import parse_args
-from train_TTA import train_one_epoch
+from src.train_TTA import train_one_epoch
 
 
 from src.evaluation.utils import evaluate, evaluate_video
-from data import create_dataset, create_sampler, create_loader
+from src.data import create_dataset, create_sampler, create_loader
 
 import torch.multiprocessing
 import tta_utils

@@ -1,15 +1,15 @@
-python src/main_TTA.py \
+python -m src.main_TTA \
     --name NEAT_clip_coco \
     --model ViT-B-32 \
     --pretrained openai \
     --csv-caption-key caption \
     --csv-img-key filepath \
-    --coco-mcq ./raw_data/images/COCO_val_mcq_llama3.1_rephrased.csv \
-    --coco-negated-retrieval ./raw_data/images/COCO_val_negated_retrieval_llama3.1_rephrased_affneg_true.csv \
-    --coco-negated-tta ./raw_data/images/COCO_val_negated_retrieval_llama3.1_rephrased_affneg_true_logic_inversion.csv \
-    --coco-retrieval ./raw_data/images/COCO_val_retrieval.csv \
-    --msrvtt-negated-retrieval ./raw_data/videos/msr_vtt_retrieval_rephrased_llama_logic_inversion.csv \
-    --msrvtt-mcq ./raw_data/videos/msr_vtt_mcq_rephrased_llama.csv \
+    --coco-mcq /cluster/medbow/home/apokhrel/Desktop/neat/neat_c/NEAT/raw_data/images/COCO_val_mcq_llama3.1_rephrased.csv \
+    --coco-negated-retrieval /cluster/medbow/home/apokhrel/Desktop/neat/neat_c/NEAT/raw_data/images/COCO_val_negated_retrieval_llama3.1_rephrased_affneg_true.csv \
+    --coco-negated-tta /cluster/medbow/home/apokhrel/Desktop/neat/neat_c/NEAT/raw_data/images/COCO_val_negated_retrieval_llama3.1_rephrased_affneg_true_logic_inversion.csv \
+    --coco-retrieval /cluster/medbow/home/apokhrel/Desktop/neat/neat_c/NEAT/raw_data/images/COCO_val_retrieval.csv \
+    --msrvtt-negated-retrieval /cluster/medbow/home/apokhrel/Desktop/neat/neat_c/NEAT/raw_data/videos/msr_vtt_retrieval_rephrased_llama_logic_inversion.csv \
+    --msrvtt-mcq /cluster/medbow/home/apokhrel/Desktop/neat/neat_c/NEAT/raw_data/videos/msr_vtt_mcq_rephrased_llama.csv \
     --tta-init-lr 2e-4 \
     --tta-steps 3 \
     --tta-retrieval t2i \

@@ -6,8 +6,8 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision.transforms.functional import InterpolationMode
-from data.coco_negated_dataset import coco_negated_retrieval_eval_image,  coco_negated_retrieval_eval_text
-from data.msrvtt_negated_dataset import msrvtt_negated_retrieval_eval_image, msrvtt_negated_retrieval_eval_text
+from src.data.coco_negated_dataset import coco_negated_retrieval_eval_image,  coco_negated_retrieval_eval_text
+from src.data.msrvtt_negated_dataset import msrvtt_negated_retrieval_eval_image, msrvtt_negated_retrieval_eval_text
 
 def create_dataset(dataset_name, input_filename, resize=384):
     

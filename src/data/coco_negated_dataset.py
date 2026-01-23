@@ -54,6 +54,7 @@ class coco_negated_retrieval_eval_image(Dataset):
 
         image_path = self.annotation[index]['image']
         print('image path is: ', image_path)
+        print('current path is:', os.sys.path)
         image = Image.open(image_path).convert('RGB')
         image = self.transform(image)
 

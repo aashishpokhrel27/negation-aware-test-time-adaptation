@@ -1,0 +1,10 @@
+# data \ experiments
+chexpert/
+images/
+videos/
+logs
+
+# Python cache
+__pycache__/
+
+

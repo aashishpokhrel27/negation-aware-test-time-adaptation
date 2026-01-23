@@ -17,10 +17,14 @@ class coco_negated_retrieval_eval_image(Dataset):
         split (string): val or test
         '''
         self.df = pd.read_csv(csv_file, sep=sep)
+        print('csv file is:, ', csv_file)
         self.df['text'] = self.df[caption_key].apply(self.safe_eval)
         self.df['image'] = self.df[img_key]
+        
 
         self.annotation = self.df[['image', 'text']].to_dict('records')
+
+        print('self annotation is: ', self.annotation)
 
         self.transform = transform
 
@@ -54,7 +58,7 @@ class coco_negated_retrieval_eval_image(Dataset):
 
         image_path = self.annotation[index]['image']
         print('image path is: ', image_path)
-        print('current path is:', os.sys.path)
+        # print('current path is:', os.sys.path)
         image = Image.open(image_path).convert('RGB')
         image = self.transform(image)
 

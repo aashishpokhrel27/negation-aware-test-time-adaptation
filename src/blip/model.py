@@ -11,7 +11,7 @@ from src.open_clip.utils import to_2tuple
 
 class BLIP(nn.Module):
     def __init__(self,
-                 med_config='/mnt/hanhc/negbench-main/benchmarks/src/blip/configs/med_config.json',
+                 med_config='./src/benchmarks/src/blip/configs/med_config.json',
                  image_size=384,
                  vit='base',
                  vit_grad_ckpt=False,

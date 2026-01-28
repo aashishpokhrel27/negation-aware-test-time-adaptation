@@ -245,13 +245,16 @@ def main(args):
         print('TTA Data Text, TTA Data Image', tta_data_text, tta_data_text)
         if args.distributed:
             nt, gr = tta_utils.get_world_size(), tta_utils.get_rank()
+            print('word size, and rank as: ', nt, gr)
             if args.retrieval == 't2i':
                 samplers = create_sampler([tta_data_text], [True], nt, gr) + create_sampler([tta_data_image], [False], nt, gr)
             elif args.retrieval == 'i2t':
                 samplers = create_sampler([tta_data_text], [False], nt, gr) + create_sampler([tta_data_image], [True], nt, gr)
             else:
                 samplers = [None, None]
+            print('sampler is: ', samplers)
             bs_text = bs_image = args.tta_total_bs // nt
+            print('bs text: ', bs_text)
         else:
             samplers = [None, None]
             bs_text = bs_image = args.tta_total_bs
@@ -259,6 +262,8 @@ def main(args):
                                                   batch_size=[bs_text, bs_image],
                                                   num_workers=[1, 1], is_trains=[False, False],
                                                   collate_fns=[None, None])
+        
+        print('loader text and loader image', loader_text, loader_image)
 
         print("Creating model")
         args.tta_only_visual = True if args.tta_retrieval == 'i2t' else False

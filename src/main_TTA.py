@@ -239,9 +239,10 @@ def main(args):
         print("Creating retrieval dataset") # select coco_negated or msrvtt_negated
         #tta_data = create_dataset('msrvtt_negated', args.msrvtt_negated_tta, resize=224)
         tta_data = create_dataset('coco_negated', args.coco_negated_tta, resize=384 if 'blip' in args.name else 224)
-
+        print('TTA Data: ', tta_data)
 
         tta_data_text, tta_data_image = tta_data if isinstance(tta_data, tuple) else (None, None)
+        print('TTA Data Text, TTA Data Image', tta_data_text, tta_data_text)
         if args.distributed:
             nt, gr = tta_utils.get_world_size(), tta_utils.get_rank()
             if args.retrieval == 't2i':

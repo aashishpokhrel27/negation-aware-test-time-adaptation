@@ -272,15 +272,15 @@ def main(args):
         optimizer =  torch.optim.AdamW(params=trainable_params, lr=args.tta_init_lr, weight_decay=args.tta_wd)
 
         print("Start Test Time Adaptation")
-        score_matrix_i2t, score_matrix_t2i = train_one_epoch(model, tokenizer, loader_text, loader_image, optimizer, device, args)
+        # score_matrix_i2t, score_matrix_t2i = train_one_epoch(model, tokenizer, loader_text, loader_image, optimizer, device, args)
 
         print('Eval after TTA')
 
     #Evaluate.
-    if args.video:
-        evaluate_video(model, data, start_epoch, args, score_matrix_t2i = score_matrix_t2i, tb_writer=writer, tokenizer=tokenizer)
-    else:
-        evaluate(model, data, start_epoch, args, score_matrix_t2i = score_matrix_t2i, tb_writer=writer, tokenizer=tokenizer)
+    # if args.video:
+    #     evaluate_video(model, data, start_epoch, args, score_matrix_t2i = score_matrix_t2i, tb_writer=writer, tokenizer=tokenizer)
+    # else:
+    #     evaluate(model, data, start_epoch, args, score_matrix_t2i = score_matrix_t2i, tb_writer=writer, tokenizer=tokenizer)
 
 
 if __name__ == "__main__":

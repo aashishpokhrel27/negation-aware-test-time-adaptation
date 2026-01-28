@@ -126,7 +126,7 @@ def train_one_epoch(model, tokenizer, data_loader_text, data_loader_image, optim
             print('Positive Text, ', pos_text)
             print('Negative Text, ', neg_text)
             print('Inverted Text, ', inv_text)
-            return
+            break
             if 'blip' not in args.name:
                 text = tokenizer(text).to(device)
                 pos_text = tokenizer(pos_text).to(device)

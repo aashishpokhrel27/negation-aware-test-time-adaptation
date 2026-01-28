@@ -123,6 +123,10 @@ def train_one_epoch(model, tokenizer, data_loader_text, data_loader_image, optim
                 image_embed = model.encode_image(image, normalize = True)
                 all_image_embeds[index] = image_embed
         for i, (text, pos_text, neg_text, inv_text ,idx) in enumerate(tqdm(data_loader_text, desc="Processing", leave=False)):
+            print('Positive Text, ', pos_text)
+            print('Negative Text, ', neg_text)
+            print('Inverted Text, ', inv_text)
+            return
             if 'blip' not in args.name:
                 text = tokenizer(text).to(device)
                 pos_text = tokenizer(pos_text).to(device)

@@ -2,6 +2,7 @@
 chexpert/
 images/
 videos/
+models/
 logs
 
 # Python cache
